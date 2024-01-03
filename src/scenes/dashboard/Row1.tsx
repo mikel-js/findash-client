@@ -1,3 +1,4 @@
+import BoxHeader from '@/components/BoxHeader';
 import DashboardBox from '@/components/DashboardBox';
 import { useGetKpisQuery } from '@/state/api';
 import { useTheme } from '@mui/material';
@@ -32,25 +33,33 @@ const Row1 = (props: Props) => {
   return (
     <>
       <DashboardBox gridArea='a'>
+        <BoxHeader title='Revenue and Expenses' sideText='+4%' />
         <ResponsiveContainer width='100%' height='100%'>
           <AreaChart
             width={500}
             height={400}
             data={revenueExpenses}
-            margin={{ top: 15, right: 25, left: -10, bottom: 60 }}
+            margin={{
+              top: 15,
+              right: 25,
+              left: -10,
+              bottom: 60,
+            }}
           >
             <defs>
               <linearGradient id='colorRevenue' x1='0' y1='0' x2='0' y2='1'>
-                <stop offset='5%' stopColor='#8884d8' stopOpacity={0.8} />
-                <stop offset='95%' stopColor='#8884d8' stopOpacity={0} />
+                <stop
+                  offset='5%'
+                  stopColor={palette.primary[300]}
+                  stopOpacity={0.5}
+                />
+                <stop
+                  offset='95%'
+                  stopColor={palette.primary[300]}
+                  stopOpacity={0}
+                />
               </linearGradient>
-              <linearGradient id='colorExpense' x1='0' y1='0' x2='0' y2='1'>
-                <stop offset='5%' stopColor='#82ca9d' stopOpacity={0.8} />
-                <stop offset='95%' stopColor='#82ca9d' stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <defs>
-              <linearGradient id='colorRevenue' x1='0' y1='0' x2='0' y2='1'>
+              <linearGradient id='colorExpenses' x1='0' y1='0' x2='0' y2='1'>
                 <stop
                   offset='5%'
                   stopColor={palette.primary[300]}
@@ -74,7 +83,6 @@ const Row1 = (props: Props) => {
               style={{ fontSize: '10px' }}
               domain={[8000, 23000]}
             />
-            <CartesianGrid strokeDasharray='3 3' />
             <Tooltip />
             <Area
               type='monotone'
@@ -86,8 +94,8 @@ const Row1 = (props: Props) => {
             />
             <Area
               type='monotone'
-              dot={true}
               dataKey='expenses'
+              dot={true}
               stroke={palette.primary.main}
               fillOpacity={1}
               fill='url(#colorExpenses)'
