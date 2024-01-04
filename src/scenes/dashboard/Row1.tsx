@@ -6,6 +6,8 @@ import React, { useMemo } from 'react';
 import {
   Area,
   AreaChart,
+  Bar,
+  BarChart,
   CartesianGrid,
   Legend,
   Line,
@@ -177,7 +179,7 @@ const Row1 = (props: Props) => {
       <DashboardBox gridArea='c'>
         <BoxHeader
           title='Revenue Month by Month'
-          subtitle='graph representing the revenue month by month'
+          subTitle='graph representing the revenue month by month'
           sideText='+4%'
         />
         <ResponsiveContainer width='100%' height='100%'>
