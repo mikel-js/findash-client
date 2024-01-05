@@ -48,6 +48,18 @@ const Row1 = (props: Props) => {
     );
   }, [data]);
 
+  const revenue = useMemo(() => {
+    return (
+      data &&
+      data[0].monthlyData.map(({ month, revenue }) => {
+        return {
+          name: month.substring(0, 3),
+          revenue: revenue,
+        };
+      })
+    );
+  }, [data]);
+
   return (
     <>
       <DashboardBox gridArea='a'>
