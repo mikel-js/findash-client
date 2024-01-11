@@ -2,7 +2,7 @@ import BoxHeader from '@/components/BoxHeader';
 import DashboardBox from '@/components/DashboardBox';
 import { useGetKpisQuery } from '@/state/api';
 import { useTheme } from '@mui/material';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import {
   Area,
   AreaChart,
