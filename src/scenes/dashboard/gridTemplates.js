@@ -1,4 +1,4 @@
-const gridTemplateLargeScreens = `
+export const gridTemplateLargeScreens = `
   "a b c"
   "a b c"
   "a b c"
@@ -11,7 +11,7 @@ const gridTemplateLargeScreens = `
   "g h j"
 `;
 
-const gridTemplateSmallScreens = `
+export const gridTemplateSmallScreens = `
   "a"
   "a"
   "a"
@@ -42,5 +42,3 @@ const gridTemplateSmallScreens = `
   "j"
   "j"
 `;
-
-export { gridTemplateLargeScreens, gridTemplateSmallScreens };
