@@ -42,3 +42,5 @@ const gridTemplateSmallScreens = `
   "j"
   "j"
 `;
+
+export { gridTemplateLargeScreens, gridTemplateSmallScreens };
