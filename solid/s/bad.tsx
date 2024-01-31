@@ -1,7 +1,4 @@
-import { useState, useEffect } from 'react';
-
-const useGetBooks = () => {
-  // We moved the fetching logic into a custom hook
+const BookList = () => {
   const [books, setBooks] = useState<IBook[]>([]);
 
   const fetchBooks = async () => {
@@ -17,14 +14,6 @@ const useGetBooks = () => {
   useEffect(() => {
     fetchBooks();
   }, []);
-
-  // Return only the final books result
-  return { books };
-};
-
-const BookList = () => {
-  // We call the hook and retrieve the books
-  const { books } = useGetBooks();
 
   return (
     <div>
